@@ -1,0 +1,1 @@
+##Here is my solution for Google Code Jam
