@@ -52,38 +52,6 @@ class DynamicGrid(object):
             if neighbour.value == 1 and not neighbour.visited:
                 self._visit_region(neighbour.row_num, neighbour.col_num)
 
-    def _get_top_left_cell(self, cell):
-        top_left_row = cell.row_num - 1
-        top_left_col = cell.col_num - 1
-        if top_left_col >= 0 and top_left_row >= 0:
-            return self.table[top_left_row][top_left_col]
-
-        return None
-
-    def _get_top_right_cell(self, cell):
-        top_right_row = cell.row_num - 1
-        top_right_col = cell.col_num + 1
-        if top_right_row >= 0 and top_right_col < self.columns:
-            return self.table[top_right_row][top_right_col]
-
-        return None
-
-    def _get_bottom_left_cell(self, cell):
-        bottom_left_row = cell.row_num + 1
-        bottom_left_col = cell.col_num - 1
-        if bottom_left_row < self.rows and bottom_left_col >= 0:
-            return self.table[bottom_left_row][bottom_left_col]
-
-        return None
-
-    def _get_bottom_right_cell(self, cell):
-        bottom_right_row = cell.row_num + 1
-        bottom_right_col = cell.col_num + 1
-        if bottom_right_col < self.columns and bottom_right_row < self.rows:
-            return self.table[bottom_right_row][bottom_right_col]
-
-        return None
-
     def _get_cell_top(self, cell):
         upper_row_num = cell.row_num - 1
         upper_col_num = cell.col_num
